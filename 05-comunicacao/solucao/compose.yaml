@@ -1,0 +1,20 @@
+services:
+  front:
+    build: ./front
+    ports:
+      - "8080:80"
+    environment:
+      ESTOQUE_URL: http://estoque:3000
+      PEDIDOS_URL: http://pedidos:3000
+
+  estoque:
+    build: ./estoque
+    ports:
+      - "3001:3000"
+
+  pedidos:
+    build: ./pedidos
+    ports:
+      - "3002:3000"
+    environment:
+      ESTOQUE_URL: http://estoque:3000

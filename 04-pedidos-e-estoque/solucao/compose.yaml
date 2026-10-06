@@ -1,0 +1,15 @@
+services:
+  front:
+    build: ./front
+    ports:
+      - "8080:80"
+
+  estoque:
+    build: ./estoque
+    ports:
+      - "3001:3000"
+
+  pedidos:
+    build: ./pedidos
+    ports:
+      - "3002:3000"
